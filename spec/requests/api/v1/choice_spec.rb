@@ -20,7 +20,7 @@ RSpec.describe Api::V1::ChoiceLessonsController, type: :controller do
         post :take, params: { id: lesson.id, student_id: student.id }
 
         expect(response).to have_http_status(:ok)
-        expect(JSON.parse(response.body)).to include("id" => lesson.id)
+        expect(JSON.parse(response.body)).to include('id' => lesson.id)
       end
     end
 
@@ -89,7 +89,7 @@ RSpec.describe Api::V1::ChoiceLessonsController, type: :controller do
         post :take, params: { id: lesson_with_previous.id, student_id: student.id }
 
         expect(response).to have_http_status(:ok)
-        expect(JSON.parse(response.body)).to include("id" => lesson_with_previous.id)
+        expect(JSON.parse(response.body)).to include('id' => lesson_with_previous.id)
       end
     end
   end

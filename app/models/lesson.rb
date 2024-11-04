@@ -1,5 +1,4 @@
 class Lesson < ApplicationRecord
-
   belongs_to :course
   has_many :questions, dependent: :destroy
   has_many :lesson_progresses
@@ -13,7 +12,7 @@ class Lesson < ApplicationRecord
     end
   end
 
-  def question_answered_correctly?(question, student)
+  def question_answered_correctly?(_question, _student)
     true
   end
 end

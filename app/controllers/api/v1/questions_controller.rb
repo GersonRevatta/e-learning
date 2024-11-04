@@ -5,8 +5,8 @@ module Api
     class QuestionsController < ApplicationController
       before_action :set_course
       before_action :set_lesson
-      before_action :set_question, only: [:show, :update, :destroy]
-      before_action :authorize_professor!, only: [:create, :update, :destroy]
+      before_action :set_question, only: %i[show update destroy]
+      before_action :authorize_professor!, only: %i[create update destroy]
 
       def index
         @questions = @lesson.questions
@@ -21,7 +21,7 @@ module Api
         @question = @lesson.questions.build
         render json: @question
       end
-    
+
       def create
         @question = @lesson.questions.build(question_params)
         if @question.save

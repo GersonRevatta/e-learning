@@ -3,9 +3,8 @@
 module Api
   module V1
     class CoursesController < ApplicationController
-
-      before_action :set_course, only: [:show, :update, :destroy]
-      before_action :authorize_professor!, only: [:create, :update, :destroy]
+      before_action :set_course, only: %i[show update destroy]
+      before_action :authorize_professor!, only: %i[create update destroy]
 
       def index
         @courses = Course.all

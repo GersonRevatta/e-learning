@@ -5,7 +5,7 @@ class Student < User
   has_many :student_answers
 
   def initialize(attributes = {})
-    attributes ||= {} 
+    attributes ||= {}
     super(attributes.merge(role: :student))
   end
 end

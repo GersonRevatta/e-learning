@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  namespace :api, defaults: { format: [:json, :raw] } do
+  namespace :api, defaults: { format: %i[json raw] } do
     namespace :v1 do
-      resources :courses, only: [:index, :show, :create, :update, :destroy] do
-        resources :lessons, only: [:index, :show, :create, :update, :destroy] do
-          resources :questions, only: [:index, :show, :create, :update, :destroy]
+      resources :courses, only: %i[index show create update destroy] do
+        resources :lessons, only: %i[index show create update destroy] do
+          resources :questions, only: %i[index show create update destroy]
         end
       end
 
